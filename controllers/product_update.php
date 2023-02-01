@@ -3,10 +3,13 @@
 session_start();
 
 require($_SERVER['DOCUMENT_ROOT'] . "/app/models/product.model.php");
-require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 
-
+if (!Validation::is_Admin($_SESSION['user_email'])) {
+    header("location: /app/controllers/profile_page.php");
+    exit();
+}
 
 $update_info = "";
 

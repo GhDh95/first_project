@@ -4,6 +4,11 @@ require($_SERVER['DOCUMENT_ROOT'] . "/app/models/image.model.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 
+if (!Validation::is_Admin($_SESSION['user_email'])) {
+    header("location: /app/controllers/profile_page.php");
+    exit();
+}
+
 User_Model::user_not_logged_in($_SESSION['user_id']);
 
 $prod_id_err = $image_path_err = "";
