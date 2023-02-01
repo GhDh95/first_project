@@ -6,7 +6,7 @@
 <p class="text-2xl text-center p-20">Admin Page</p>
 <div class="p-20 bg-slate-50 border border-black flex flex-col items-center md:space-y-3 md:items-start ">
     <div class="">
-        <a href="/app/controllers/product_upload.php">
+        <a href="/app/product_upload">
             <div class="flex space-x-2">
 
                 <p>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="">
-        <a href="/app/controllers/product_update.php">
+        <a href="/app/product_update">
             <div class="flex space-x-2">
 
                 <p>
@@ -33,7 +33,7 @@
         </a>
     </div>
     <div class="">
-        <a href="/app/controllers/image_upload.php">
+        <a href="/app/image_upload">
             <div class="flex space-x-2">
 
                 <p>
@@ -46,7 +46,7 @@
         </a>
     </div>
     <div class="">
-        <a href="/app/controllers/image_update.php">
+        <a href="/app/image_update">
             <div class="flex space-x-2">
 
                 <p>

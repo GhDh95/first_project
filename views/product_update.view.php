@@ -5,7 +5,7 @@
 <div class="">
     <div class="flex px-20 py-10 justify-center space-x-2">
         <p class="text-center text-2xl">Update product</p>
-        <a class="pt-1" href="/app/controllers/admin_profile.php">
+        <a class="pt-1" href="/app/admin_profile">
             <span class="material-symbols-outlined">
                 settings
             </span>
