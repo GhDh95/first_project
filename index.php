@@ -20,13 +20,13 @@ $routes = [
     '/app/product_upload' => '/app/controllers/product_upload.php',
     '/app/rate' => '/app/controllers/rate.php',
     '/app/registration' => '/app/controllers/registration.php',
-    '/app/request_password' => '/app/controllers/request_password.php'
-
+    '/app/request_password' => '/app/controllers/request_password.php',
+    '/app/404_not_found' => '/app/controllers/404_not_found.php'
 
 ];
 
 if (array_key_exists($uri, $routes)) {
     require($_SERVER['DOCUMENT_ROOT'] . "{$routes[$uri]}");
 } else {
-    require($_SERVER['DOCUMENT_ROOT'] . "/app/controllers/404_not_found.php");
+    require($_SERVER['DOCUMENT_ROOT'] . "{$routes['/app/404_not_found']}");
 }
