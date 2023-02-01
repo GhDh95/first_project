@@ -6,7 +6,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $routes = [
 
     '/app/' => '/app/controllers/shop.php',
-    '/app/cart' => '/app/controllers/shop.php',
+    '/app/cart' => '/app/controllers/cart.php',
     '/app/account_settings' => '/app/controllers/account_settings.php',
     '/app/admin_profile' => '/app/controllers/admin_profile.php',
     '/app/image_update' => '/app/controllers/image_update.php',

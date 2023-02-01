@@ -170,4 +170,22 @@ class Product_Model
         $con->close();
         return $res;
     }
+
+    public static function delete_correspoding_imgs($id)
+    {
+        $id = htmlspecialchars(trim($id));
+        $con = require($_SERVER['DOCUMENT_ROOT'] . "/app/public/connect.php");
+        $sql = "DELETE FROM images WHERE product_id = '{$id}';";
+        $result = $con->query($sql);
+        if (!$result) {
+            die('Error: could not run query: ' . $con->error);
+        }
+        $rows = mysqli_affected_rows($con);
+        $con->close();
+        if ($rows > 0) {
+
+            return true;
+        }
+        return false;
+    }
 }
