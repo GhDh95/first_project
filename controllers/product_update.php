@@ -1,7 +1,10 @@
 <?php
 
+session_start();
+
 require($_SERVER['DOCUMENT_ROOT'] . "/app/models/product.model.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
 
 
 
@@ -9,6 +12,7 @@ $update_info = "";
 
 $products = Product_Model::get_product_info();
 
+User_Model::user_not_logged_in($_SESSION['user_id']);
 
 
 

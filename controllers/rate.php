@@ -1,11 +1,20 @@
 <?php
 
 require '../public/connect.php';
+require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 
 session_start();
+
 if (!isset($_SESSION['user_id'])) {
-    header('location: login.php');
+    header('location: /app/controllers/login.php');
     exit;
+}
+
+if (isset($_SESSION['user_email'])) {
+    if (Validation::is_Admin($_SESSION['user_email'])) {
+        header('location: /app/controllers/admin_profile.php');
+        exit;
+    }
 }
 
 $user_id = $_SESSION['user_id'];

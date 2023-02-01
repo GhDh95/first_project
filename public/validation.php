@@ -123,4 +123,12 @@ class Validation
 
         return true;
     }
+
+    public static function is_Admin(&$email)
+    {
+        if ($email == "admin@test.de") {
+            return true;
+        }
+        return false;
+    }
 }

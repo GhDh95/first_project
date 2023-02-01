@@ -1,7 +1,13 @@
 <?php
+
+session_start();
+
 require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/models/product.model.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/models/image.model.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
+
+User_Model::user_not_logged_in($_SESSION['user_id']);
 
 $prod_id_err = $image_path_err = $upload_failed_err = "";
 

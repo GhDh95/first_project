@@ -110,7 +110,16 @@
 
     </form>
 
-    <p class="text-semibold text-green-400"><?= $msg ?></p>
+    <p x-data="{
+        remove_msg(){
+                if(document.getElementById('err_msg').innerText !== null){
+
+                    setTimeout(() => {
+                        document.getElementById('err_msg').innerText = '';
+                    }, 3000);
+                }
+            }
+    }" id="err_msg" x-init="remove_msg()" class="text-semibold text-lg text-green-600"><?= $msg ?></p>
 
 </div>
 

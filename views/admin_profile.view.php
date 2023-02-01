@@ -62,7 +62,16 @@
 
 
 
-        <button type="submit" name="newsletter" class="hover:pointer text-[16px]">Send Newsletter</button>
+        <button x-data="{
+            remove_msg(){
+                if(document.getElementById('err_msg').innerText !== null){
+
+                    setTimeout(() => {
+                        document.getElementById('err_msg').innerText = '';
+                }, 3000);
+                }
+            }
+        }" type="submit" name="newsletter" class="hover:pointer text-[16px]" x-init="remove_msg()">Send Newsletter</button>
         <span class="material-symbols-outlined">
             share
         </span>
@@ -76,7 +85,7 @@
     </form>
 </div>
 
-
+<p id="err_msg" class="text-semibold text-green-500 text-center text-2xl py-10"><?= $msg ?></p>
 
 
 
