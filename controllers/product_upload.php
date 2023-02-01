@@ -8,6 +8,11 @@ require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
 
 User_Model::user_not_logged_in($_SESSION['user_id']);
 
+if (!Validation::is_Admin($_SESSION['user_email'])) {
+    header("location: /app/controllers/profile_page.php");
+    exit();
+}
+
 
 $prod_name_err = "";
 $prod_categ_err = "";

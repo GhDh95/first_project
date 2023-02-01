@@ -9,7 +9,7 @@
     async update_cart(e){
         let data = [];
         try{
-            const response = await fetch('../public/update_cart.php');
+            const response = await fetch('/app/public/update_cart.php');
             data = await response.json();
 
             this.cart_data = data;

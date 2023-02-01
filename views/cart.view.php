@@ -19,7 +19,7 @@
     async get_cart_items(e){
         let data = [];
     try{
-        const response = await fetch('../public/load_cart_items_json.php');
+        const response = await fetch('/app/public/load_cart_items_json.php');
         data = await response.json();
         this.cart_data = data;
         this.filtered_cart = this.cart_data.filter((obj, index, self) =>
@@ -82,7 +82,7 @@
         };
         let data = '';
         try{
-            const response = await fetch(`../public/cart_page_processing_json.php`, {
+            const response = await fetch(`/app/public/cart_page_processing_json.php`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
