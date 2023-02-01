@@ -19,7 +19,7 @@
     async get_cart_items(e){
         let data = [];
     try{
-        const response = await fetch('/app/public/load_cart_items_json.php');
+        const response = await fetch('../public/load_cart_items_json.php');
         data = await response.json();
         this.cart_data = data;
         this.filtered_cart = this.cart_data.filter((obj, index, self) =>
@@ -82,7 +82,7 @@
         };
         let data = '';
         try{
-            const response = await fetch(`/app/public/cart_page_processing_json.php`, {
+            const response = await fetch(`../public/cart_page_processing_json.php`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -170,7 +170,7 @@
         <template x-if="!filtered_cart.length && !isProcessing">
             <div class="flex flex-col items-center pt-32 space-y-10">
                 <p>Cart is Empty! </p>
-                <a class="hover:underline" href="/app/shop">Back to shop</a>
+                <a class="hover:underline" href="/app/controllers/shop.php">Back to shop</a>
             </div>
         </template>
     </div>

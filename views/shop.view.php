@@ -17,7 +17,7 @@
     async get_products(e){
         let data = [];
     try{
-        const response = await fetch('/app/public/load_products_json.php');
+        const response = await fetch('../public/load_products_json.php');
         data = await response.json();
         this.all_data = data;
         this.product_data = this.all_data.product_info;
@@ -76,7 +76,7 @@
                 product_id: this.clicked_prod
             };
         try{
-            const response = await fetch(`/app/public/process_cart.php`, {
+            const response = await fetch(`../public/process_cart.php`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

@@ -3,7 +3,7 @@
 <div class="flex flex-col items-center space-y-20 pt-20">
     <p class="text-teal-600 pt-10 font-semibold text-xl md:text-2xl">Welcome back, <?= $_SESSION['username'] ?>.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:px-32 md:px-36 ">
-        <a href="/app/account_settings">
+        <a href="/app/controllers/account_settings.php">
             <div class=" border border-black bg-indigo-50 flex items-center justify-center  transition ease-in-out delay-150 md:hover:-translate-y-1 md:hover:translate-x-0 hover:translate-x-1 hover:-translate-y-1">
 
 
@@ -24,7 +24,7 @@
 
             </div>
         </a>
-        <a href="/app/rate">
+        <a href="/app/controllers/rate.php">
             <div class=" border border-black bg-indigo-50 flex items-center justify-center   transition ease-in-out delay-150 md:hover:-translate-y-1 md:hover:translate-x-0 hover:translate-x-1 hover:-translate-y-1">
 
                 <div class="flex items-center justify-center space-x-3    ">
@@ -43,7 +43,7 @@
 
             </div>
         </a>
-        <a href="/app/orders">
+        <a href="/app/controllers/orders.php">
             <div class=" border border-black bg-indigo-50 flex items-center justify-center   transition ease-in-out delay-150 md:hover:translate-y-1 md:hover:translate-x-0 hover:translate-x-1 hover:-translate-y-1">
 
 

@@ -15,7 +15,7 @@
                 val: this.prod_id_input
             };
             try {
-                const response = await fetch(`/app/public/image_path_json.php`, {
+                const response = await fetch(`../public/image_path_json.php`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

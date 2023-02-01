@@ -4,7 +4,7 @@
 
 <div class="flex px-20 pt-10 justify-center space-x-2">
     <p class="text-center text-2xl">Manage account</p>
-    <a class="pt-1" href="/app/profile_page">
+    <a class="pt-1" href="/app/controllers/profile_page.php">
         <span class="material-symbols-outlined">
             settings
         </span>
