@@ -3,7 +3,7 @@
 <div class="flex justify-center py-20 border-b border-black">
 
 
-    <form class="flex flex-col  w-1/2 max-w-2xl space-y-4" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="flex flex-col  w-1/2 max-w-2xl space-y-4" action="<?php echo $_GET['path']; ?>" method="POST">
         <div>
             <label class="text-sm" for="name">Email</label>
             <br>

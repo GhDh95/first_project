@@ -4,7 +4,7 @@
 
 <div class="flex px-20 py-10 justify-center space-x-2">
     <p class="text-center text-2xl">Upload product</p>
-    <a class="pt-1" href="/app/controllers/admin_profile.php">
+    <a class="pt-1" href="/app/admin_profile">
         <span class="material-symbols-outlined">
             settings
         </span>
@@ -14,7 +14,7 @@
 
 <div class="flex justify-center py-16  bg-slate-100 ">
 
-    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" class="flex flex-col  w-1/2 max-w-2xl space-y-2">
+    <form action="<?php echo $_GET['path']; ?>" method="POST" class="flex flex-col  w-1/2 max-w-2xl space-y-2">
         <div>
 
             <label class="text-sm" for="product_name">Product name</label>

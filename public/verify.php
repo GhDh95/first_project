@@ -9,5 +9,5 @@ if (isset($_GET["email"]) && isset($_GET["code"])) {
         echo "Verification fehlgeschlagen";
     }
 } else {
-    header("location: /app/views/registration.php");
+    header("location: /app/registration");
 }

@@ -13,7 +13,7 @@
         <div class="container mx-auto py-10">
             <div class="flex space-x-5">
                 <h1 class="text-2xl font-bold mb-4">Orders</h1>
-                <a class="pt-1" href="/app/controllers/profile_page.php">
+                <a class="pt-1" href="/app/profile_page">
                     <span class="material-symbols-outlined">
                         settings
                     </span>

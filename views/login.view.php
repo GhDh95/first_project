@@ -2,7 +2,7 @@
 <?php require(__DIR__ . "\\partials\\navigation.php"); ?>
 <div class="flex justify-center py-20 border-b border-black">
 
-    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?php echo $_GET['path']; ?>" method="POST">
         <div>
             <label class="text-sm" for="email">Email</label>
             <br>
@@ -20,8 +20,8 @@
         <input class="border border-black cursor-pointer h-10 bg-black text-white hover:opacity-75" type="submit" value="Sign in">
         <p class="text-sm text-semibold text-red-500"><?= $invalid_err ?></p>
 
-        <a class="hover:underline text-violet-500 font-semibold" href="/app/controllers/registration.php">New here? <span class="block md:inline">Sign up!</span> </a>
-        <a class="hover:underline text-violet-500 font-semibold" href="/app/controllers/request_password.php">Reset your password</a>
+        <a class="hover:underline text-violet-500 font-semibold" href="/app/registration">New here? <span class="block md:inline">Sign up!</span> </a>
+        <a class="hover:underline text-violet-500 font-semibold" href="/app/request_password">Reset your password</a>
     </form>
 </div>
 

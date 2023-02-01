@@ -13,7 +13,7 @@ User_Model::user_not_logged_in($_SESSION['user_id']);
 
 
 if (!Validation::is_Admin($_SESSION['user_email'])) {
-    header("location: /app/controllers/profile_page.php");
+    header("location: /app/profile_page");
     exit();
 }
 

@@ -44,7 +44,7 @@ class User_Model
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['user_email'] = $input_email;
-                header("location: /app/controllers/profile_page.php");
+                header("location: /app/profile_page");
                 exit();
             } else {
 
@@ -59,14 +59,14 @@ class User_Model
     {
         session_unset();
         session_destroy();
-        header("location: /app/controllers/login.php");
+        header("location: /app/login");
         exit();
     }
 
     public static function user_not_logged_in(&$user_id)
     {
         if (!isset($user_id)) {
-            header("location: /app/controllers/login.php");
+            header("location: /app/login");
             exit();
         }
     }
@@ -74,7 +74,7 @@ class User_Model
     public static function user_isAdmin(&$user_email)
     {
         if ($user_email == "admin@test.de") {
-            header("location: /app/controllers/admin_profile.php");
+            header("location: /app/admin_profile");
             exit();
         }
     }

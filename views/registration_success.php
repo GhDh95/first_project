@@ -8,8 +8,8 @@
 
     <div class="grid grid-cols-2 gap-x-2">
 
-        <a class="border  px-9 py-2 border-black text-center align-middle bg-black text-white hover:opacity-75" href="/app/controllers/login.php">Sign in!</a>
-        <a class="border  px-9 py-2 border-black text-center align-middle bg-black text-white hover:opacity-75" href="/app/controllers/login.php">Shop</a>
+        <a class="border  px-9 py-2 border-black text-center align-middle bg-black text-white hover:opacity-75" href="/app/login">Sign in!</a>
+        <a class="border  px-9 py-2 border-black text-center align-middle bg-black text-white hover:opacity-75" href="/app/login">Shop</a>
     </div>
 
 </div>

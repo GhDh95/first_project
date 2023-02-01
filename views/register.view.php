@@ -3,7 +3,7 @@
 
 <div class="flex justify-center py-20 border-b border-black">
 
-    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?php echo $_GET['path']; ?>" method="POST">
         <div>
 
             <label class="text-sm" for="username">Username</label>
@@ -32,7 +32,7 @@
         <p class="text-sm text-semibold text-red-500"><?= $duplicate_error ?></p>
         <p class="text-sm text-semibold text-red-500"><?= $logged_in_err ?></p>
 
-        <a class="hover:underline text-violet-500 font-semibold" href="/app/controllers/login.php">Already have an account? <span class="block md:inline">Sign in!</span> </a>
+        <a class="hover:underline text-violet-500 font-semibold" href="/app/login">Already have an account? <span class="block md:inline">Sign in!</span> </a>
     </form>
 
 </div>

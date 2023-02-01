@@ -9,7 +9,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 $msg = "";
 
 if (!isset($_SESSION["user_id"])) {
-    header("location: /app/controllers/login.php");
+    header("location: /app/login");
     exit();
 }
 

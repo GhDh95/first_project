@@ -170,7 +170,7 @@
         <template x-if="!filtered_cart.length && !isProcessing">
             <div class="flex flex-col items-center pt-32 space-y-10">
                 <p>Cart is Empty! </p>
-                <a class="hover:underline" href="/app/controllers/shop.php">Back to shop</a>
+                <a class="hover:underline" href="/app/shop">Back to shop</a>
             </div>
         </template>
     </div>
@@ -185,7 +185,7 @@
             <?php endforeach; ?>
         </div>
 
-        <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+        <form action="<?php echo $_GET['path']; ?>" method="POST">
             <button type="submit" name="checkout" class="border border-black text-2xl px-2 bg-indigo-800 text-white hover:opacity-75 hover:bg-indigo-600">Checkout</button>
         </form>
     </div>

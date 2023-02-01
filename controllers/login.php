@@ -6,7 +6,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 
 if (isset($_SESSION['user_id'])) {
-    header("location: /app/controllers/profile_page.php");
+    header("location: /app/profile_page");
     exit();
 }
 

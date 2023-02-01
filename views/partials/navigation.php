@@ -48,9 +48,9 @@
 
     <div class=" bg-white h-screen fixed z-50 w-full flex flex-col items-center pt-5 space-y-3" :class="open? '' : 'hidden'">
         <div class="flex flex-col items-center space-y-3 pt-6">
-            <p class="hover:underline"><a href="/app/controllers/shop.php">Shop</a> </p>
-            <p class="hover:underline"><a href="/app/controllers/login.php">Profile</a> </p>
-            <p class="hover:underline"><a href="/app/controllers/cart.php">Cart</a> </p>
+            <p class="hover:underline"><a href="/app/shop">Shop</a> </p>
+            <p class="hover:underline"><a href="/app/login">Profile</a> </p>
+            <p class="hover:underline"><a href="/app/cart">Cart</a> </p>
         </div>
         <button @click="open = !open">
             <span class="material-symbols-outlined">
@@ -63,7 +63,7 @@
             <a class="" href="">
                 <p class="font-Playfair font-medium text-xl md:text-2xl">Rebel Accessoires</p>
             </a>
-            <a href="/app/controllers/shop.php">
+            <a href="/app/shop">
                 <p class="font-normal pl-10 hover:underline hidden md:block pt-1 ">Shop</p>
 
             </a>
@@ -105,7 +105,7 @@
                                 shopping_bag
                             </span>
 
-                            <a href="/app/controllers/shop.php" class="hover:underline pt-10">continue shopping</a>
+                            <a href="/app/shop" class="hover:underline pt-10">continue shopping</a>
                         </div>
 
                     </template>
@@ -113,12 +113,12 @@
                 </div>
                 <div class="w-full grid grid-cols-1 place-content-center justify-items-center h-2/6">
 
-                    <a href="/app/controllers/cart.php" class=" text-xl border py-1 h-fit px-2 border-black cursor-pointer hover:ring-1 hover:ring-black bg-black text-white hover:opacity-75 text-center w-fit">Go to cart</a>
+                    <a href="/app/cart" class=" text-xl border py-1 h-fit px-2 border-black cursor-pointer hover:ring-1 hover:ring-black bg-black text-white hover:opacity-75 text-center w-fit">Go to cart</a>
                 </div>
             </div>
             <!--  -->
             <div class="pt-2">
-                <a href="/app/controllers/login.php">
+                <a href="/app/login">
                     <span class="material-symbols-outlined">
                         person
                     </span>

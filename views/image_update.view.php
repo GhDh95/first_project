@@ -78,13 +78,13 @@
 
     <div class="flex px-20 py-10 justify-center space-x-2">
         <p class="text-center text-2xl">Update Images</p>
-        <a class="pt-1" href="/app/controllers/admin_profile.php">
+        <a class="pt-1" href="/app/admin_profile">
             <span class="material-symbols-outlined">
                 settings
             </span>
         </a>
     </div>
-    <form class="flex flex-col space-y-10 bg-slate-50 md:p-20" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="flex flex-col space-y-10 bg-slate-50 md:p-20" action="<?php echo $_GET['path']; ?>" method="POST">
         <div class="grid grid-cols-2 justify-items-center">
             <label for="product_id">Product Id</label>
             <div class="flex flex-col space-y-2">

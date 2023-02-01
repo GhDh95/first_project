@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         if (count($unavailable_products) <= 0) {
-            header("location: /app/controllers/payment.php");
+            header("location: /app/payment");
             exit();
         } else {
             foreach ($unavailable_products as $key => $val) {

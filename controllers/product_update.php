@@ -7,7 +7,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 
 if (!Validation::is_Admin($_SESSION['user_email'])) {
-    header("location: /app/controllers/profile_page.php");
+    header("location: /app/profile_page");
     exit();
 }
 

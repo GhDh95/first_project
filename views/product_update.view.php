@@ -5,14 +5,14 @@
 <div class="">
     <div class="flex px-20 py-10 justify-center space-x-2">
         <p class="text-center text-2xl">Update product</p>
-        <a class="pt-1" href="/app/controllers/admin_profile.php">
+        <a class="pt-1" href="/app/admin_profile">
             <span class="material-symbols-outlined">
                 settings
             </span>
         </a>
     </div>
     <div class=" bg-slate-100 ">
-        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" class="">
+        <form action="<?php echo $_GET['path']; ?>" method="POST" class="">
 
             <div class=" grid grid-cols-1  md:grid md:grid-cols-8 space-y-2 md:space-y-0 md:ml-28 md:py-20 p-5">
 

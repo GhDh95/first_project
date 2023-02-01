@@ -4,7 +4,7 @@
 
 <div class="flex px-20 pt-10 justify-center space-x-2">
     <p class="text-center text-2xl">Manage account</p>
-    <a class="pt-1" href="/app/controllers/profile_page.php">
+    <a class="pt-1" href="/app/profile_page">
         <span class="material-symbols-outlined">
             settings
         </span>
@@ -13,7 +13,7 @@
 
 <div class="grid grid-cols-1 place-items-center py-20 border-b border-black">
 
-    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?php echo $_GET['path']; ?>" method="POST">
         <div>
             <label class="text-sm" for="username">Username</label>
             <br>
@@ -23,7 +23,7 @@
         <input class="border border-black cursor-pointer h-10 bg-black text-white hover:opacity-75" type="submit" name="submitName" value="Name ändern">
     </form>
 
-    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?php echo $_GET['path']; ?>" method="POST">
         <div>
             <label class="text-sm" for="name">Email</label>
             <br>
@@ -33,7 +33,7 @@
         <input class="border border-black cursor-pointer h-10 bg-black text-white hover:opacity-75" type="submit" name="submitEmail" value="Email ändern">
     </form>
 
-    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?php echo $_GET['path']; ?>" method="POST">
         <div>
             <label class="text-sm" for="name">Old password</label>
             <br>
