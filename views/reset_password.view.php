@@ -1,5 +1,6 @@
-<?php require(__DIR__ . "//partials//header.php"); ?>
-<?php require(__DIR__ . "//partials//navigation.php"); ?>
+<?php require(__DIR__ . "\\partials\\header.php"); ?>
+<?php require(__DIR__ . "\\partials\\navigation.php"); ?>
+
 <div class="flex justify-center py-20 border-b border-black">
 
     <form class="flex flex-col  w-1/2 max-w-2xl space-y-2" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
@@ -36,4 +37,4 @@
 
 
 
-<?php require(__DIR__ . "//partials//footer.php"); ?>
+<?php include(dirname(__FILE__) . "\\partials\\footer.php"); ?>

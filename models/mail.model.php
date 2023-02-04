@@ -257,7 +257,7 @@ class Mail_Model
         $mail->Subject = "Request to change Email";
         $mail->setFrom("webshopprojekt22.23@gmail.com");
         $mail->isHTML(true);
-        $mail->Body = "/app/change_email" . $id . "&code=" . $code . "";
+        $mail->Body = "http://localhost/app/public/change_mail.php?id=" . $id . "&code=" . $code . "";
         $mail->addAddress($new_email);
         $mail->send();
         $mail->smtpClose();

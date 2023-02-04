@@ -1,6 +1,6 @@
-<?php require(__DIR__ . "//partials//header.php"); ?>
-<?php require(__DIR__ . "//partials//navigation.php"); ?>
+<?php include(dirname(__FILE__) . "\\partials\\header.php"); ?>
 
+<?php include(dirname(__FILE__) . "\\partials\\navigation.php"); ?>
 
 <div class=" flex flex-col space-y-20 items-center border-b border-black py-36">
 
@@ -14,4 +14,6 @@
 </div>
 
 
-<?php require(__DIR__ . "//partials//footer.php"); ?>
+
+
+<?php include(dirname(__FILE__) . "\\partials\\footer.php"); ?>

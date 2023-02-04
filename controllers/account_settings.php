@@ -23,6 +23,7 @@ if (isset($_POST["submitName"])) {
     if ($validation) {
         User_Model::change_name($_POST["username"], $_SESSION["user_id"]);
         $username = User_Model::get_account_info($_SESSION["user_id"], "username");
+        $_SESSION['username'] = $username;
         $msg = "Update successful";
     }
 }

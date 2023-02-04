@@ -26,8 +26,9 @@ $routes = [
     '/app/order_success' => '/app/controllers/order_success.php',
     '/app/registration_success' => '/app/views/registration_success.php',
     '/app/registration_verify' => '/app/views/registration_verify.php',
-    '/app/change_email_success' => '/app/public/change_email_success.php',
-    '/app/verification_success' => '/app/views/registration_success.php'
+    '/app/change_email_success' => '/app/views/change_email_success.php',
+    '/app/verification_success' => '/app/views/registration_success.php',
+    '/app/change_mail' => '/app/public/change_mail.php'
 
 ];
 

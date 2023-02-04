@@ -121,7 +121,7 @@ class User_Model
     }
     public static function set_new_mail($id, $code)
     {
-        $con = require($_SERVER['DOCUMENT_ROOT'] . "/app/connect.php");
+        $con = require($_SERVER['DOCUMENT_ROOT'] . "/app/public/connect.php");
         $sql = "SELECT * FROM new_emails WHERE verify_code = ('{$code}') AND user_id = ('{$id}')";
         $result = $con->query($sql);
         if (!$result) {
