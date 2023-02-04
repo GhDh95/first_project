@@ -23,7 +23,11 @@ $routes = [
     '/app/request_password' => '/app/controllers/request_password.php',
     '/app/404_not_found' => '/app/controllers/404_not_found.php',
     '/app/payment' => '/app/controllers/payment.php',
-    '/app/order_success' => '/app/controllers/order_success.php'
+    '/app/order_success' => '/app/controllers/order_success.php',
+    '/app/registration_success' => '/app/views/registration_success.php',
+    '/app/registration_verify' => '/app/views/registration_verify.php',
+    '/app/change_email_success' => '/app/public/change_email_success.php',
+    '/app/verification_success' => '/app/views/registration_success.php'
 
 ];
 

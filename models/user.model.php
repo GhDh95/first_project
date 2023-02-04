@@ -22,13 +22,13 @@ class User_Model
 
     public static function login($input_email, $input_password, &$input_error)
     {
-        /* filter the inputs */
+        /* Filtert Eingabe */
         $email = filter_var($input_email, FILTER_VALIDATE_EMAIL);
         $password = htmlspecialchars($input_password);
 
-        /* Check if user already exists in DB */
+        /* Überpürft, ob Nutzer existiert */
         $con = require($_SERVER['DOCUMENT_ROOT'] . "/app/public/connect.php");
-        $sql = "SELECT * FROM users WHERE email = '{$email}'";
+        $sql = "SELECT * FROM users WHERE email = ('{$email}')";
         $result = $con->query($sql);
         if (!$result) {
             die('Error: could not run query: ' . $con->error);
@@ -38,19 +38,25 @@ class User_Model
             $user = $result->fetch_assoc();
             $pw_hash = $user['password_hash'];
             if (password_verify($password, $pw_hash)) {
-                if (!isset($_SESSION)) {
-                    session_start();
+                /* Prüft, ob Nutzer schon verifiziert */
+                if ($user["verified"] == "unverified") {
+                    $input_error = "Please verify your Account before login*";
+                } else {
+                    if (!isset($_SESSION)) {
+                        session_start();
+                    }
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['user_email'] = $input_email;
+                    header("location: /app/profile_page");
+                    exit();
                 }
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['user_email'] = $input_email;
-                header("location: /app/profile_page");
-
-                exit();
             } else {
 
                 $input_error = "Wrong Email or Password!*";
             }
+        } else {
+            $input_error = "Wrong Email or Password!*";
         }
 
         $con->close();
@@ -112,5 +118,56 @@ class User_Model
             die('Error: ' . $con->error);
         }
         $con->close();
+    }
+    public static function set_new_mail($id, $code)
+    {
+        $con = require($_SERVER['DOCUMENT_ROOT'] . "/app/connect.php");
+        $sql = "SELECT * FROM new_emails WHERE verify_code = ('{$code}') AND user_id = ('{$id}')";
+        $result = $con->query($sql);
+        if (!$result) {
+            die('Error: could not run query: ' . $con->error);
+        }
+        if ($result->num_rows > 0) {
+            $input = $result->fetch_assoc();
+            $inputSQL = $input["new_email"];
+            $sql = "UPDATE users SET email = '{$inputSQL}' WHERE id = ('{$id}')";
+            if (!$con->query($sql)) {
+                die('Error: ' . $con->error);
+            }
+            $sql = "DELETE FROM new_emails WHERE verify_code = ('{$code}') AND user_id = ('{$id}')";
+            if (!$con->query($sql)) {
+                die('Error: could not run query: ' . $con->error);
+            }
+            $con->close();
+            return true;
+        }
+        $con->close();
+        return false;
+    }
+    public static function reset_password($email, $code, $new_password)
+    {
+        $con = require($_SERVER['DOCUMENT_ROOT'] . "/app/public/connect.php");
+        $sql = "SELECT * FROM users WHERE verify_code = ('{$code}') AND email = ('{$email}')";
+        $result = $con->query($sql);
+        if (!$result) {
+            die('Error: could not run query: ' . $con->error);
+        }
+        if ($result->num_rows > 0) {
+            $sql = "UPDATE users SET password_hash = ('{$new_password}') WHERE email = ('{$email}')";
+            if (!$con->query($sql)) {
+                die('Error: ' . $con->error);
+            }
+            /* Die selbe Spalte verify_code, wie für die Accountverifizierung. Wird beide male nach 
+        Benutzung auf NULL gesetzt */
+            $sql = "UPDATE users SET verify_code = NULL WHERE email = ('{$email}')";
+            if (!$con->query($sql)) {
+                die('Error: could not run query: ' . $con->error);
+            }
+            $con->close();
+            return true;
+        } else {
+            $con->close();
+            return false;
+        }
     }
 }

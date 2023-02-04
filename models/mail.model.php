@@ -155,7 +155,7 @@ class Mail_Model
         $mail->Subject = "Verify";
         $mail->setFrom("webshopprojekt22.23@gmail.com");
         $mail->isHTML(true);
-        $mail->Body = "http://localhost:8888/app/public/verify.php?email=" . $email . "&code=" . $code . "";
+        $mail->Body = "http://localhost/app/public/verify.php?email=" . $email . "&code=" . $code . "";
         $mail->addAddress($email);
         $mail->send();
         $mail->smtpClose();
@@ -213,7 +213,7 @@ class Mail_Model
             $mail->Subject = "Change password";
             $mail->setFrom("webshopprojekt22.23@gmail.com");
             $mail->isHTML(true);
-            $mail->Body = "http://localhost:8888/app/controllers/reset_password.php?email=" . $email . "&code=" . $code . "";
+            $mail->Body = "http://localhost/app/controllers/reset_password.php?email=" . $email . "&code=" . $code . "";
             $mail->addAddress($email);
             $mail->send();
             $mail->smtpClose();
@@ -257,7 +257,7 @@ class Mail_Model
         $mail->Subject = "Request to change Email";
         $mail->setFrom("webshopprojekt22.23@gmail.com");
         $mail->isHTML(true);
-        $mail->Body = "http://localhost:8888/app/change_email.php?id=" . $id . "&code=" . $code . "";
+        $mail->Body = "/app/change_email" . $id . "&code=" . $code . "";
         $mail->addAddress($new_email);
         $mail->send();
         $mail->smtpClose();

@@ -8,7 +8,7 @@
         <p class="mb-4">Thank you for your order. We will process it as soon as possible. A confirmation email has been
             sent to your email address.</p>
         <div class="flex justify-between w-full">
-            <a href="/app/profile_page" class="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-600 mr-2">Return
+            <a href="/app/shop" class="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-600 mr-2">Return
                 to
                 Homepage</a>
             <a href="/app/shop" class="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-600">Continue Shopping</a>
