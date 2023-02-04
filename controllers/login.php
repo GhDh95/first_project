@@ -5,10 +5,15 @@ session_start();
 require($_SERVER['DOCUMENT_ROOT'] . "/app/models/user.model.php");
 require($_SERVER['DOCUMENT_ROOT'] . "/app/public/validation.php");
 
+
+
+
 if (isset($_SESSION['user_id'])) {
     header("location: /app/profile_page");
     exit();
 }
+
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

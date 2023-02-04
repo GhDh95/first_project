@@ -262,4 +262,23 @@ class Mail_Model
         $mail->send();
         $mail->smtpClose();
     }
+
+    public static function order_success_email($id, $email)
+    {
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = "tls";
+        $mail->Port = "587";
+        $mail->Username = "webshopprojekt22.23@gmail.com";
+        $mail->Password = "qzvvakfjitpgcxhb";
+        $mail->Subject = "Order_success";
+        $mail->setFrom("webshopprojekt22.23@gmail.com");
+        $mail->isHTML(true);
+        $mail->Body = "Vielen Dank für ihre Bestellung! Wir werden Sie auf dem Laufenden halten was den Status ihrer Bestellung angeht!";
+        $mail->addAddress($email);
+        $mail->send();
+        $mail->smtpClose();
+    }
 }

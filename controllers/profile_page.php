@@ -14,6 +14,7 @@ User_Model::user_not_logged_in($_SESSION['user_id']);
 /* will redirect to admin page if user email corresponds with that of admin */
 User_Model::user_isAdmin($_SESSION['user_email']);
 
+/* If coming from cart.php to login, will be redirected to payment */
 
 
 if (isset($_POST['log_out'])) {

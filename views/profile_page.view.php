@@ -1,5 +1,6 @@
 <?php require(__DIR__ . "\\partials\\header.php"); ?>
 <?php require(__DIR__ . "\\partials\\navigation.php"); ?>
+
 <div class="flex flex-col items-center space-y-20 pt-20">
     <p class="text-teal-600 pt-10 font-semibold text-xl md:text-2xl">Welcome back, <?= $_SESSION['username'] ?>.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:px-32 md:px-36 ">

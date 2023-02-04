@@ -9,6 +9,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/app/models/mail.model.php");
 
 
 User_Model::user_not_logged_in($_SESSION['user_id']);
+
+
 $msg = "";
 if (isset($_POST['log_out'])) {
     echo "success";

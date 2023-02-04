@@ -9,12 +9,15 @@ $arr = array();
 $qty = 0;
 $available_qty_arr = array();
 $unavailable_products = array();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['checkout']) && !isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         $emty_msg = "Cart is Empty!";
         array_push($err_arr, $emty_msg);
     }
     if (isset($_POST['checkout']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+
+
 
         $data = Product_Model::get_prod_qty();
 

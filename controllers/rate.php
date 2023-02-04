@@ -16,7 +16,7 @@ if (isset($_SESSION['user_email'])) {
         exit;
     }
 }
-
+$rate_msg = "";
 $user_id = $_SESSION['user_id'];
 
 $sql = "SELECT DISTINCT product_name FROM Orders JOIN Products ON Orders.product_id = Products.product_id 
@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $insert_query = "INSERT INTO ratings (rating, user_id, product_id) VALUES ($rating, $user_id, $product_id)";
             mysqli_query($con, $insert_query);
+            $rate_msg = "Product rated!";
         }
     } catch (mysqli_sql_exception $e) {
         throw $e;

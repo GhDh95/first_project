@@ -25,15 +25,15 @@ class Image_Model
         $con = require($_SERVER['DOCUMENT_ROOT'] . "/app/public/connect.php");
         $sql = "SELECT image_id, image_path FROM images WHERE product_id = '{$id}'";
         $result = $con->query($sql);
-        if (!$result) { //result is a boolean: 
+        if (!$result) { //
             die('Error: ' . $con->error);
         }
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                    /* array_push($images,  $row['image_path']) */;
                 $images[] = array($row['image_id'] => $row['image_path']);
             }
         }
+        $con->close();
 
         return $images;
     }
@@ -54,6 +54,7 @@ class Image_Model
         } catch (Exception $e) {
             $err_msg = "Image update failed";
         }
+        $con->close();
     }
 
     public static function get_images($id)

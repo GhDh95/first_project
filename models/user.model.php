@@ -45,6 +45,7 @@ class User_Model
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['user_email'] = $input_email;
                 header("location: /app/profile_page");
+
                 exit();
             } else {
 

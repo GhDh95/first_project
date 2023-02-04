@@ -21,7 +21,9 @@ $routes = [
     '/app/rate' => '/app/controllers/rate.php',
     '/app/registration' => '/app/controllers/registration.php',
     '/app/request_password' => '/app/controllers/request_password.php',
-    '/app/404_not_found' => '/app/controllers/404_not_found.php'
+    '/app/404_not_found' => '/app/controllers/404_not_found.php',
+    '/app/payment' => '/app/controllers/payment.php',
+    '/app/order_success' => '/app/controllers/order_success.php'
 
 ];
 

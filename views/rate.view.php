@@ -54,3 +54,5 @@
         </table>
     </div>
 </div>
+
+<p class="text-center text-green-500 text-2xl"><?= $rate_msg ?></p>
