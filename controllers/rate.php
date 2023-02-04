@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $insert_query = "INSERT INTO ratings (rating, user_id, product_id) VALUES ($rating, $user_id, $product_id)";
             mysqli_query($con, $insert_query);
-            $rate_msg = "Product rated!";
         }
+        $rate_msg = "Product rated!";
     } catch (mysqli_sql_exception $e) {
         throw $e;
     }

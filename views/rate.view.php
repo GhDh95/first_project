@@ -28,7 +28,7 @@
                         echo "<tr class='bg-white'>
                     <td class='py-4 px-6 border border-gray-400'>" . $row['product_name'] . "</td>
                     <td class='py-4 px-6 border border-gray-400'>
-                        <form action='/app/controllers/rate.php' method='post'>
+                        <form action='/app/rate' method='post'>
                         <input type='hidden' name='product_name' value='" . $row['product_name'] . "'>
                             <select name='rating' class='bg-gray-100 border border-gray-400 p-2'>
                                 <option value='1'>1</option>
@@ -38,7 +38,7 @@
                                 <option value='5'>5</option>
                             </select>
                             <input type='submit' value='Rate'
-                                class='bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded'>
+                                class='bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded hover:cursor-pointer'>
                         </form>
                     </td>
                 </tr>";
